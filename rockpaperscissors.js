@@ -15,7 +15,7 @@ function game() {
     draws = 0,
     rounds = 0;
 
-    for (rounds = 0; playerWins <= 5 || computerWins <= 5; rounds++) {
+    for (let counter = 0; playerWins <= 5 || computerWins <= 5; counter++) {
         playRound();
         rounds++;
         if (playerWins === 5) {
@@ -24,7 +24,7 @@ function game() {
             confirm("Computer won 5 matches!");
         } else {
             confirm(
-                `Player wins: ${playerWins}
+            `Player wins: ${playerWins}
             Computer wins: ${computerWins}
             Draws: ${draws}
             Rounds played: ${rounds}`);
