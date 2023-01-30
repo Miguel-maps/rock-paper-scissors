@@ -9,38 +9,6 @@ function getComputerChoice() {
     }
 }
 
-function playRound() {
-    let playerSelection = prompt("Write your choice:");
-    let computerSelection = getComputerChoice();
-    playerSelection = playerSelection.toLowerCase();
-
-    // Computer chooses scissors
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        confirm("You won! Rock beats Scissors");
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        confirm("You lose! Scissors beats Paper");
-    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        confirm("Draw! Both players choose Scissors");
-        // Computer chooses paper
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
-        confirm("You lose! Paper beats Rock");
-    } else if (playerSelection === "paper" && computerSelection === "paper") {
-        confirm("Draw! Both players choose Paper");
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        confirm("You won! Scissors beat Paper");
-        // Computer chooses rock
-    } else if (playerSelection === "rock" && computerSelection === "rock") {
-        confirm("Draw! Both players choose Rock");
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        confirm("You won! Paper beat Rock");
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        confirm("You lose! Rock beats Scissors");
-        // Something failed
-    } else {
-        confirm("Write a valid option");
-    }
-}
-
 function game() {
     let playerWins = 0,
     computerWins = 0,
@@ -60,6 +28,47 @@ function game() {
             Computer wins: ${computerWins}
             Draws: ${draws}
             Rounds played: ${rounds}`);
+        }
+    }
+
+    function playRound() {
+        let playerSelection = prompt("Write your choice:");
+        let computerSelection = getComputerChoice();
+        playerSelection = playerSelection.toLowerCase();
+    
+        // Computer chooses scissors
+        if (playerSelection === "rock" && computerSelection === "scissors") {
+            confirm("You won! Rock beats Scissors");
+            playerWins++;
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+            confirm("You lose! Scissors beats Paper");
+            computerWins++;
+        } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+            confirm("Draw! Both players choose Scissors");
+            draws++;
+            // Computer chooses paper
+        } else if (playerSelection === "rock" && computerSelection === "paper") {
+            confirm("You lose! Paper beats Rock");
+            computerWins++;
+        } else if (playerSelection === "paper" && computerSelection === "paper") {
+            confirm("Draw! Both players choose Paper");
+            draws++;
+        } else if (playerSelection === "scissors" && computerSelection === "paper") {
+            confirm("You won! Scissors beat Paper");
+            playerWins++;
+            // Computer chooses rock
+        } else if (playerSelection === "rock" && computerSelection === "rock") {
+            confirm("Draw! Both players choose Rock");
+            draws++;
+        } else if (playerSelection === "paper" && computerSelection === "rock") {
+            confirm("You won! Paper beat Rock");
+            playerWins++;
+        } else if (playerSelection === "scissors" && computerSelection === "rock") {
+            confirm("You lose! Rock beats Scissors");
+            computerWins++;
+            // Something failed
+        } else {
+            confirm("Write a valid option");
         }
     }
 
