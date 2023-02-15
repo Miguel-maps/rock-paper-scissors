@@ -43,27 +43,19 @@ function playRound(playerSelection) {
     }
     rounds++;
     updateAllCounters();
+    checkForEnd();
 }
 
-// Update every counter
-function updateAllCounters() {
-    updateCounter('totalRounds', 'Total Rounds', rounds);
-    updateCounter('playerScore', 'Player Score', playerWins);
-    updateCounter('computerScore', 'Computer Score', computerWins);
-    updateCounter('draws', 'Draws', drawCounter);
-}
-
-// Update selected counter
-function updateCounter(elementId, name, count) {
-    const counterElement = document.querySelector(`#${elementId}`);
-    counterElement.textContent = `${name}: ${count}`;
-  }  
-
-/*
-
-DOM
-
-*/
+function checkForEnd() {
+    if (playerWins >= 5 || computerWins >= 5) {
+      alert("Game over! Play again?");
+      playerWins = 0;
+      computerWins = 0;
+      drawCounter = 0;
+      rounds = 0;
+      updateAllCounters();
+    }
+  }
 
 // Player buttons
 const playerButtonRock = document.querySelector('#rock');
@@ -81,3 +73,18 @@ playerButtonPaper.addEventListener('click', () => {
 playerButtonScissors.addEventListener('click', () => {
     playRound("scissors");
 });
+
+// Update every counter
+function updateAllCounters() {
+    updateCounter('totalRounds', rounds);
+    updateCounter('playerScore', playerWins);
+    updateCounter('computerScore', computerWins);
+    updateCounter('draws', drawCounter);
+}
+
+// Update selected counter
+function updateCounter(elementId, count) {
+    const counterElement = document.querySelector(`#${elementId}`);
+    const name = counterElement.textContent.split(':')[0];
+    counterElement.textContent = `${name}: ${count}`;
+}  
