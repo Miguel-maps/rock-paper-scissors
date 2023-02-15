@@ -47,31 +47,17 @@ function playRound(playerSelection) {
 
 // Update every counter
 function updateAllCounters() {
-    updatePlayerWins();
-    updateComputerWins();
-    updateDraws();
-    updateRounds();
+    updateCounter('totalRounds', 'Total Rounds', rounds);
+    updateCounter('playerScore', 'Player Score', playerWins);
+    updateCounter('computerScore', 'Computer Score', computerWins);
+    updateCounter('draws', 'Draws', drawCounter);
 }
 
-function updateRounds() {
-    const totalRounds = document.querySelector('#totalRounds');
-    totalRounds.textContent = rounds;
-}
-
-function updatePlayerWins() {
-    const playerScore = document.querySelector('#playerScore');
-    playerScore.textContent = playerWins;
-}
-
-function updateComputerWins() {
-    const computerScore = document.querySelector('#computerScore');
-    computerScore.textContent = computerWins;
-}
-
-function updateDraws() {
-    const draws = document.querySelector('#draws');
-    draws.textContent = drawCounter;
-}
+// Update selected counter
+function updateCounter(elementId, name, count) {
+    const counterElement = document.querySelector(`#${elementId}`);
+    counterElement.textContent = `${name}: ${count}`;
+  }  
 
 /*
 
