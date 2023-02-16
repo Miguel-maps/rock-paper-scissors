@@ -55,7 +55,7 @@ function checkForEnd() {
       rounds = 0;
       updateAllCounters();
     }
-  }
+}
 
 // Player buttons
 const playerButtonRock = document.querySelector('#rock');
