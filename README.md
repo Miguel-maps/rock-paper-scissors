@@ -5,6 +5,16 @@ A basic GUI has already been implemented and the game allows the player to play 
 
 This is an exercise from The Odin Project.
 
+TODO:
+- Styles:
+    · Add border to the game elements
+    · Add a colorful style
+    · Change button styles. Use hand icons.
+    · Create a "blank space" to show the computer's choice. This could be an inverted icon to simulate that the placer is facing the computer.
+- Game:
+    · Change the way the game indicates which option the computer chooses.
+        An idea for this would be to toggle visibility and change the icon of the computer's choice.
+
 BUGS:
 
 - Whenever the player or the computer win 5 rounds, the game prompts to play again, but the winner counter stays at 4 and won't update to 5. This has been debugged and works fine, although I haven't found a workaround to visibly update the winner's counter.
