@@ -4,42 +4,42 @@ let drawCounter = 0;
 let rounds = 0;
 
 function getComputerChoice() {
-    return ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
+    return ["Rock", "Paper", "Scissors"][Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
 
-    // Computer chooses scissors
-    if (playerSelection === "rock" && computerSelection === "scissors") {
+    // Computer chooses Scissors
+    if (playerSelection === "Rock" && computerSelection === "Scissors") {
         alert("You won! Rock beats Scissors");
-        playerWins++;
-    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        addVictory(playerButtonRock, computerButton);
+    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
         alert("You lose! Scissors beats Paper");
-        computerWins++;
-    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+        addDefeat(playerButtonPaper, computerButton);
+    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
         alert("Draw! Both players choose Scissors");
-        drawCounter++;
-        // Computer chooses paper
-    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        addDraw();
+        // Computer chooses Paper
+    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
         alert("You lose! Paper beats Rock");
-        computerWins++;
-    } else if (playerSelection === "paper" && computerSelection === "paper") {
+        addDefeat(playerButtonRock, computerButton);
+    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
         alert("Draw! Both players choose Paper");
-        drawCounter++;
-    } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        alert("You won! Scissors beat Paper");
-        playerWins++;
-        // Computer chooses rock
-    } else if (playerSelection === "rock" && computerSelection === "rock") {
+        addDraw();
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        alert("You won! Scissors beats Paper");
+        addVictory(playerButtonScissors, computerButton);
+        // Computer chooses Rock
+    } else if (playerSelection === computerSelection) {
         alert("Draw! Both players choose Rock");
-        drawCounter++;
-    } else if (playerSelection === "paper" && computerSelection === "rock") {
-        alert("You won! Paper beat Rock");
-        playerWins++;
-    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        addDraw();
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        alert("You won! Paper beats Rock");
+        addVictory(playerButtonPaper, computerButton);
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
         alert("You lose! Rock beats Scissors");
-        computerWins++;
+        addDefeat(playerButtonScissors, computerButton);
     }
     rounds++;
     updateAllCounters();
@@ -53,26 +53,10 @@ function checkForEnd() {
       computerWins = 0;
       drawCounter = 0;
       rounds = 0;
+      buttons.forEach(button => button.removeAttribute('class'));
       updateAllCounters();
     }
 }
-
-// Player buttons
-const playerButtonRock = document.querySelector('#rock');
-const playerButtonPaper = document.querySelector('#paper');
-const playerButtonScissors = document.querySelector('#scissors');
-
-playerButtonRock.addEventListener('click', () => {
-    playRound("rock");
-});
-
-playerButtonPaper.addEventListener('click', () => {
-    playRound("paper");
-});
-
-playerButtonScissors.addEventListener('click', () => {
-    playRound("scissors");
-});
 
 // Update every counter
 function updateAllCounters() {
@@ -88,3 +72,44 @@ function updateCounter(elementId, count) {
     const name = counterElement.textContent.split(':')[0];
     counterElement.textContent = `${name}: ${count}`;
 }  
+
+// All buttons
+const playerButtonRock = document.querySelector('#rock');
+const playerButtonPaper = document.querySelector('#paper');
+const playerButtonScissors = document.querySelector('#scissors');
+const computerButton = document.querySelector('#computerButton');
+const buttons = document.querySelectorAll('button')
+computerButton.disabled = true;
+
+playerButtonRock.addEventListener('click', () => {
+    playRound("Rock");
+});
+
+playerButtonPaper.addEventListener('click', () => {
+    playRound("Paper");
+});
+
+playerButtonScissors.addEventListener('click', () => {
+    playRound("Scissors");
+});
+
+
+
+function addVictory(playerButton, computerButton) {
+    playerWins++;
+    buttons.forEach(button => button.removeAttribute('class'));
+    playerButton.classList.add('victory');
+    computerButton.classList.add('defeat');
+}
+
+function addDefeat(playerButton, computerButton) {
+    computerWins++;
+    buttons.forEach(button => button.removeAttribute('class'));
+    playerButton.classList.add('defeat');
+    computerButton.classList.add('victory');
+}
+
+function addDraw() {
+    drawCounter++;
+    buttons.forEach(button => button.removeAttribute('class'));
+}

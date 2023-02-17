@@ -46,3 +46,21 @@ button {
     width: 100px;
     height: 100px;
 }
+
+#computerButton {
+    display: flex;
+    align-items: center;
+    margin: auto;  
+}
+
+.victory {
+    background-color: green;
+    transition: all .5s ease;
+    transform: scale(1.1);
+    border-color: green;
+    box-shadow: 0 0 1rem green;
+}
+
+.defeat {
+    background-color: red;
+}

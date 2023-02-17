@@ -10,10 +10,16 @@ TODO:
     · Add border to the game elements
     · Add a colorful style
     · Change button styles. Use hand icons.
-    · Create a "blank space" to show the computer's choice. This could be an inverted icon to simulate that the placer is facing the computer.
+    · Add an inverted icon in computer's button.
 - Game:
     · Change the way the game indicates which option the computer chooses.
-        An idea for this would be to toggle visibility and change the icon of the computer's choice.
+        Add a <p> that indicates the result of the round.
+
+DONE:
+- Styles:
+    · Create a "blank space" to show the computer's choice. This could be an inverted icon to simulate that the placer is facing the computer.
+    · Change the way the game indicates which option the computer chooses.
+    An idea for this would be to toggle visibility and change the icon of the computer's choice.
 
 BUGS:
 
