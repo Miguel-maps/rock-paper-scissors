@@ -11,8 +11,7 @@ Icons by Cuputo: https://www.flaticon.com/packs/hand-gesture-and-finger-action-1
 TODO:
 - Styles:
     · Add a colorful style
-    · Change button styles. Use hand icons.
-    · Add an inverted icon in computer's button.
+    · Soften button transitions
 
 DONE:
 - Styles:
@@ -20,6 +19,8 @@ DONE:
     · Change the way the game indicates which option the computer chooses.
     An idea for this would be to toggle visibility and change the icon of the computer's choice.
     · Add borders to the game elements
+    · Change button styles. Use hand icons.
+    · Add an inverted icon in computer's button.
 
 - Game:
         Add a <p> that indicates the result of the round.
