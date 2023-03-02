@@ -40,8 +40,9 @@ h1, h4, p {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
+    margin-bottom: 5vh;
     justify-content: center;
-    gap: 50px;
+    gap: 2rem;
 
     border-radius: 5px;
     background-color: #4daed1;
