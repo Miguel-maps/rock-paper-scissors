@@ -48,6 +48,7 @@ h1, h4, p {
 #results {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 

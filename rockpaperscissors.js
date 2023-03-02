@@ -14,33 +14,33 @@ function playRound(playerSelection) {
 
     // Computer chooses scissors
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        results.innerHTML = "You won! rock beats scissors";
+        results.innerHTML = "You won!";
         addVictory(playerButtonrock, computerButton);
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        results.innerHTML = "You lose! scissors beats paper";
+        results.innerHTML = "You lose!";
         addDefeat(playerButtonPaper, computerButton);
     } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        results.innerHTML = "Draw! Both players choose scissors";
+        results.innerHTML = "Draw!";
         addDraw();
         // Computer chooses paper
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        results.innerHTML = "You lose! paper beats rock";
+        results.innerHTML = "You lose!";
         addDefeat(playerButtonrock, computerButton);
     } else if (playerSelection === "paper" && computerSelection === "paper") {
-        results.innerHTML = "Draw! Both players choose paper";
+        results.innerHTML = "Draw!";
         addDraw();
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        results.innerHTML = "You won! scissors beats paper";
+        results.innerHTML = "You won!";
         addVictory(playerButtonScissors, computerButton);
         // Computer chooses rock
     } else if (playerSelection === computerSelection) {
-        results.innerHTML = "Draw! Both players choose rock";
+        results.innerHTML = "Draw!";
         addDraw();
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        results.innerHTML = "You won! paper beats rock";
+        results.innerHTML = "You won!";
         addVictory(playerButtonPaper, computerButton);
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        results.innerHTML = "You lose! rock beats scissors";
+        results.innerHTML = "You lose!";
         addDefeat(playerButtonScissors, computerButton);
     }
     rounds++;
@@ -56,6 +56,8 @@ function checkForEnd() {
       drawCounter = 0;
       rounds = 0;
       buttons.forEach(button => button.removeAttribute('class'));
+      computerButton.innerHTML = "";
+      results.innerHTML = "Pick an option below";
       updateAllCounters();
     }
 }
