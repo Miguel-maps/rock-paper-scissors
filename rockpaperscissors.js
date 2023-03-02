@@ -12,33 +12,33 @@ function playRound(playerSelection) {
 
     // Computer chooses Scissors
     if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        alert("You won! Rock beats Scissors");
+        results.innerHTML = "You won! Rock beats Scissors";
         addVictory(playerButtonRock, computerButton);
     } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        alert("You lose! Scissors beats Paper");
+        results.innerHTML = "You lose! Scissors beats Paper";
         addDefeat(playerButtonPaper, computerButton);
     } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        alert("Draw! Both players choose Scissors");
+        results.innerHTML = "Draw! Both players choose Scissors";
         addDraw();
         // Computer chooses Paper
     } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        alert("You lose! Paper beats Rock");
+        results.innerHTML = "You lose! Paper beats Rock";
         addDefeat(playerButtonRock, computerButton);
     } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        alert("Draw! Both players choose Paper");
+        results.innerHTML = "Draw! Both players choose Paper";
         addDraw();
     } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        alert("You won! Scissors beats Paper");
+        results.innerHTML = "You won! Scissors beats Paper";
         addVictory(playerButtonScissors, computerButton);
         // Computer chooses Rock
     } else if (playerSelection === computerSelection) {
-        alert("Draw! Both players choose Rock");
+        results.innerHTML = "Draw! Both players choose Rock";
         addDraw();
     } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        alert("You won! Paper beats Rock");
+        results.innerHTML = "You won! Paper beats Rock";
         addVictory(playerButtonPaper, computerButton);
     } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        alert("You lose! Rock beats Scissors");
+        results.innerHTML = "You lose! Rock beats Scissors";
         addDefeat(playerButtonScissors, computerButton);
     }
     rounds++;
@@ -73,13 +73,14 @@ function updateCounter(elementId, count) {
     counterElement.textContent = `${name}: ${count}`;
 }  
 
-// All buttons
+// All HTML elements
 const playerButtonRock = document.querySelector('#rock');
 const playerButtonPaper = document.querySelector('#paper');
 const playerButtonScissors = document.querySelector('#scissors');
 const computerButton = document.querySelector('#computerButton');
 const buttons = document.querySelectorAll('button')
 computerButton.disabled = true;
+const results = document.querySelector('#results');
 
 playerButtonRock.addEventListener('click', () => {
     playRound("Rock");
