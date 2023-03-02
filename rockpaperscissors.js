@@ -31,7 +31,10 @@ function playRound(playerSelection) {
     }
     rounds++;
     updateAllCounters();
-    checkForEnd();
+    setTimeout(function(){
+        checkForEnd();
+    }, 50);
+    
 }
 
 function checkForEnd() {

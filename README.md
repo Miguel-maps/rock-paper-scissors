@@ -22,6 +22,8 @@ DONE:
 - Game:
         Add a <p> that indicates the result of the round.
 
-BUGS:
+FIXED BUGS:
 
-- Whenever the player or the computer win 5 rounds, the game prompts to play again, but the winner counter stays at 4 and won't update to 5. This has been debugged and works fine, although I haven't found a workaround to visibly update the winner's counter.
+- Whenever the player or the computer win 5 rounds, the game prompts to play again, but the winner counter stays at 4 and won't update to 5.
+Also, the buttons won't update to the win/defeat styles.
+This has been debugged and works fine, although I haven't found a workaround to visibly update the winner's counter.
