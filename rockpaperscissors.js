@@ -14,34 +14,20 @@ function playRound(playerSelection) {
 
     // Computer chooses scissors
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        results.innerHTML = "You won!";
         addVictory(playerButtonrock, computerButton);
     } else if (playerSelection === "paper" && computerSelection === "scissors") {
-        results.innerHTML = "You lose!";
         addDefeat(playerButtonPaper, computerButton);
-    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        results.innerHTML = "Draw!";
-        addDraw();
-        // Computer chooses paper
     } else if (playerSelection === "rock" && computerSelection === "paper") {
-        results.innerHTML = "You lose!";
         addDefeat(playerButtonrock, computerButton);
-    } else if (playerSelection === "paper" && computerSelection === "paper") {
-        results.innerHTML = "Draw!";
-        addDraw();
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        results.innerHTML = "You won!";
         addVictory(playerButtonScissors, computerButton);
         // Computer chooses rock
-    } else if (playerSelection === computerSelection) {
-        results.innerHTML = "Draw!";
-        addDraw();
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        results.innerHTML = "You won!";
         addVictory(playerButtonPaper, computerButton);
     } else if (playerSelection === "scissors" && computerSelection === "rock") {
-        results.innerHTML = "You lose!";
         addDefeat(playerButtonScissors, computerButton);
+    } else if (playerSelection === computerSelection) {
+        addDraw();
     }
     rounds++;
     updateAllCounters();
@@ -105,6 +91,7 @@ function addVictory(playerButton, computerButton) {
     buttons.forEach(button => button.removeAttribute('class'));
     playerButton.classList.add('victory');
     computerButton.classList.add('defeat');
+    results.innerHTML = "You won!";
 }
 
 function addDefeat(playerButton, computerButton) {
@@ -112,9 +99,11 @@ function addDefeat(playerButton, computerButton) {
     buttons.forEach(button => button.removeAttribute('class'));
     playerButton.classList.add('defeat');
     computerButton.classList.add('victory');
+    results.innerHTML = "You lose!";
 }
 
 function addDraw() {
     drawCounter++;
     buttons.forEach(button => button.removeAttribute('class'));
+    results.innerHTML = "Draw!";
 }
