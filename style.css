@@ -11,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px green solid;
 }
 
 h1, h4 {
@@ -20,12 +21,14 @@ h1, h4 {
 .gameElements {
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 325px;
+    padding: 25px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
     justify-content: center;
     gap: 50px;
+    border: 1px green solid;
 }
 
 #score > .playerComputerScores, .drawsAndRounds {
@@ -39,7 +42,7 @@ h1, h4 {
     display: flex;
     justify-content: center;
     padding: 20px;
-    border: 1px green solid;
+    border: 1px grey solid;
 }
 
 #playerButtons {
