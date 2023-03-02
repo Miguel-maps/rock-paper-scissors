@@ -3,6 +3,16 @@ let computerWins = 0;
 let drawCounter = 0;
 let rounds = 0;
 
+function preloadImage(url)
+{
+    const img = new Image();
+    img.src = url;
+}
+
+preloadImage("images/rock_inv.png");
+preloadImage("images/paper_inv.png");
+preloadImage("images/scissors_inv.png");
+
 function getComputerChoice() {
     const cChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
     computerButton.innerHTML = `<img src="images/${cChoice}_inv.png" alt="${cChoice}"></img>`;
