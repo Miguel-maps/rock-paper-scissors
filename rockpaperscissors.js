@@ -4,41 +4,43 @@ let drawCounter = 0;
 let rounds = 0;
 
 function getComputerChoice() {
-    return ["Rock", "Paper", "Scissors"][Math.floor(Math.random() * 3)];
+    const cChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
+    computerButton.innerHTML = `<img src="images/${cChoice}_inv.png" alt="${cChoice}"></img>`;
+    return cChoice;
 }
 
 function playRound(playerSelection) {
     let computerSelection = getComputerChoice();
 
-    // Computer chooses Scissors
-    if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        results.innerHTML = "You won! Rock beats Scissors";
-        addVictory(playerButtonRock, computerButton);
-    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        results.innerHTML = "You lose! Scissors beats Paper";
+    // Computer chooses scissors
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+        results.innerHTML = "You won! rock beats scissors";
+        addVictory(playerButtonrock, computerButton);
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        results.innerHTML = "You lose! scissors beats paper";
         addDefeat(playerButtonPaper, computerButton);
-    } else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        results.innerHTML = "Draw! Both players choose Scissors";
+    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+        results.innerHTML = "Draw! Both players choose scissors";
         addDraw();
-        // Computer chooses Paper
-    } else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        results.innerHTML = "You lose! Paper beats Rock";
-        addDefeat(playerButtonRock, computerButton);
-    } else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        results.innerHTML = "Draw! Both players choose Paper";
+        // Computer chooses paper
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        results.innerHTML = "You lose! paper beats rock";
+        addDefeat(playerButtonrock, computerButton);
+    } else if (playerSelection === "paper" && computerSelection === "paper") {
+        results.innerHTML = "Draw! Both players choose paper";
         addDraw();
-    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        results.innerHTML = "You won! Scissors beats Paper";
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        results.innerHTML = "You won! scissors beats paper";
         addVictory(playerButtonScissors, computerButton);
-        // Computer chooses Rock
+        // Computer chooses rock
     } else if (playerSelection === computerSelection) {
-        results.innerHTML = "Draw! Both players choose Rock";
+        results.innerHTML = "Draw! Both players choose rock";
         addDraw();
-    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        results.innerHTML = "You won! Paper beats Rock";
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        results.innerHTML = "You won! paper beats rock";
         addVictory(playerButtonPaper, computerButton);
-    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        results.innerHTML = "You lose! Rock beats Scissors";
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        results.innerHTML = "You lose! rock beats scissors";
         addDefeat(playerButtonScissors, computerButton);
     }
     rounds++;
@@ -74,7 +76,7 @@ function updateCounter(elementId, count) {
 }  
 
 // All HTML elements
-const playerButtonRock = document.querySelector('#rock');
+const playerButtonrock = document.querySelector('#rock');
 const playerButtonPaper = document.querySelector('#paper');
 const playerButtonScissors = document.querySelector('#scissors');
 const computerButton = document.querySelector('#computerButton');
@@ -82,16 +84,16 @@ const buttons = document.querySelectorAll('button')
 computerButton.disabled = true;
 const results = document.querySelector('#results');
 
-playerButtonRock.addEventListener('click', () => {
-    playRound("Rock");
+playerButtonrock.addEventListener('click', () => {
+    playRound("rock");
 });
 
 playerButtonPaper.addEventListener('click', () => {
-    playRound("Paper");
+    playRound("paper");
 });
 
 playerButtonScissors.addEventListener('click', () => {
-    playRound("Scissors");
+    playRound("scissors");
 });
 
 

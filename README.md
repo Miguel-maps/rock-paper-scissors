@@ -5,6 +5,9 @@ A basic GUI has already been implemented and the game allows the player to play 
 
 This is an exercise from The Odin Project.
 
+CREDITS:
+Icons by Cuputo: https://www.flaticon.com/packs/hand-gesture-and-finger-action-1
+
 TODO:
 - Styles:
     · Add a colorful style
