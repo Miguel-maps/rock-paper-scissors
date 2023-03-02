@@ -1,3 +1,7 @@
+:root {
+    --linkColor: #FFC759;
+}
+
 html, body {
     height: 100%;
     font-family: "Comfortaa", sans-serif;
@@ -8,6 +12,11 @@ body {
     flex-direction: column;
     background-color: #28536B;
 }
+
+a:link{color:var(--linkColor)}
+a:active{color:var(--linkColor)}
+a:visited{color:var(--linkColor)}
+a:hover{color:var(--linkColor)}
 
 h1, h4 {
     text-align: center;
@@ -30,7 +39,7 @@ h1, h4, p {
     padding: 25px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10vh;
+    margin-top: 5vh;
     justify-content: center;
     gap: 50px;
 
@@ -74,7 +83,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;  
+    margin: auto; 
 }
 
 .victory {

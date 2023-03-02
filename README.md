@@ -1,17 +1,12 @@
 # rock-paper-scissors
-Second version of a Rock Paper Scissors project by using JavaScript and HTML+CSS.
+Third version of a Rock Paper Scissors project by using JavaScript and HTML+CSS. Hopefully this is the final version.
 
-A basic GUI has already been implemented and the game allows the player to play 5 rounds. Whenever the player or the computer wins 5 rounds, the game resets all counters and a new game starts.
+An improved GUI has already been implemented and the game allows the player to play 5 rounds. Whenever the player or the computer wins 5 rounds, the game resets all counters and a new game starts.
 
 This is an exercise from The Odin Project.
 
 CREDITS:
 Icons by Cuputo: https://www.flaticon.com/packs/hand-gesture-and-finger-action-1
-
-TODO:
-- Styles:
-    · Add a colorful style
-    · Soften button transitions
 
 DONE:
 - Styles:
@@ -21,6 +16,8 @@ DONE:
     · Add borders to the game elements
     · Change button styles. Use hand icons.
     · Add an inverted icon in computer's button.
+    · Add a colorful style
+    · Soften button transitions
 
 - Game:
         Add a <p> that indicates the result of the round.
